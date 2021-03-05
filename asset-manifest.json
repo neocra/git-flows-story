@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/git-flows-story/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/git-flows-story/static/js/main.9d5bad5d.chunk.js",
-    "main.js.map": "/git-flows-story/static/js/main.9d5bad5d.chunk.js.map",
-    "runtime-main.js": "/git-flows-story/static/js/runtime-main.ee7013c2.js",
-    "runtime-main.js.map": "/git-flows-story/static/js/runtime-main.ee7013c2.js.map",
-    "static/js/2.be599c65.chunk.js": "/git-flows-story/static/js/2.be599c65.chunk.js",
-    "static/js/2.be599c65.chunk.js.map": "/git-flows-story/static/js/2.be599c65.chunk.js.map",
-    "static/js/3.3d68176e.chunk.js": "/git-flows-story/static/js/3.3d68176e.chunk.js",
-    "static/js/3.3d68176e.chunk.js.map": "/git-flows-story/static/js/3.3d68176e.chunk.js.map",
-    "index.html": "/git-flows-story/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/git-flows-story/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.be599c65.chunk.js.LICENSE.txt": "/git-flows-story/static/js/2.be599c65.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/git-flows-story/static/media/logo.6ce24c58.svg"
+    "main.js": "./main.386713a60ecba8decbd4.bundle.js",
+    "main.js.map": "./main.386713a60ecba8decbd4.bundle.js.map",
+    "runtime~main.js": "./runtime~main.386713a60ecba8decbd4.bundle.js",
+    "runtime~main.js.map": "./runtime~main.386713a60ecba8decbd4.bundle.js.map",
+    "vendors~main.js": "./vendors~main.386713a60ecba8decbd4.bundle.js",
+    "vendors~main.js.map": "./vendors~main.386713a60ecba8decbd4.bundle.js.map",
+    "iframe.html": "./iframe.html",
+    "static/media/code-brackets.2e1112d7.svg": "./static/media/code-brackets.2e1112d7.svg",
+    "static/media/colors.a4bd0486.svg": "./static/media/colors.a4bd0486.svg",
+    "static/media/comments.a3859089.svg": "./static/media/comments.a3859089.svg",
+    "static/media/direction.b770f9af.svg": "./static/media/direction.b770f9af.svg",
+    "static/media/flow.edad2ac1.svg": "./static/media/flow.edad2ac1.svg",
+    "static/media/plugin.d494b228.svg": "./static/media/plugin.d494b228.svg",
+    "static/media/repo.6d496322.svg": "./static/media/repo.6d496322.svg",
+    "static/media/stackalt.dba9fbb3.svg": "./static/media/stackalt.dba9fbb3.svg",
+    "vendors~main.386713a60ecba8decbd4.bundle.js.LICENSE.txt": "./vendors~main.386713a60ecba8decbd4.bundle.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ee7013c2.js",
-    "static/js/2.be599c65.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.9d5bad5d.chunk.js"
+    "runtime~main.386713a60ecba8decbd4.bundle.js",
+    "vendors~main.386713a60ecba8decbd4.bundle.js",
+    "main.386713a60ecba8decbd4.bundle.js"
   ]
 }
