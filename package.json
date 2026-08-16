@@ -39,8 +39,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "cleanup": "rm -rf node_modules/.cache/gh-pages/",
-    "predeploy": "npm run build-storybook",
-    "deploy": "npm run cleanup && gh-pages -b deploy -d storybook-static"
+    "predeploy": "yarn build-storybook",
+    "deploy": "yarn cleanup && gh-pages -b deploy -d storybook-static"
   },
   "browserslist": {
     "production": [
