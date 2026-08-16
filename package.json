@@ -2,39 +2,45 @@
   "name": "gitflow-story",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "homepage": "https://neocra.github.io/git-flows-story",
   "dependencies": {
-    "@gitgraph/react": "^1.5.4",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "gh-pages": "^3.1.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
+    "@gitgraph/core": "^1.5.0",
+    "@gitgraph/react": "^1.6.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "web-vitals": "^6.1.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-docs": "^10.5.8",
+    "@storybook/addon-links": "^10.5.8",
+    "@storybook/react-vite": "^10.5.8",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.4",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.0.5",
+    "gh-pages": "^6.3.0",
+    "jsdom": "^29.1.1",
+    "storybook": "^10.5.8",
+    "typescript": "^5.9.3",
+    "vite": "^8.2.1",
+    "vitest": "^4.1.10"
   },
   "scripts": {
-    "predeploy": "build-storybook -s public",
-    "deploy": "npm run cleanup && gh-pages -b deploy -d storybook-static",
+    "start": "vite",
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
     "cleanup": "rm -rf node_modules/.cache/gh-pages/",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "predeploy": "yarn build-storybook",
+    "deploy": "yarn cleanup && gh-pages -b deploy -d storybook-static"
   },
   "browserslist": {
     "production": [
@@ -47,13 +53,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@storybook/addon-actions": "^6.1.20",
-    "@storybook/addon-essentials": "^6.1.20",
-    "@storybook/addon-links": "^6.1.20",
-    "@storybook/node-logger": "^6.1.20",
-    "@storybook/preset-create-react-app": "^3.1.6",
-    "@storybook/react": "^6.1.20"
   }
 }

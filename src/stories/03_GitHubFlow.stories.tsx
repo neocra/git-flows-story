@@ -1,29 +1,46 @@
 import * as React from "react";
-import { storiesOf } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Gitgraph, Mode, Branch } from "@gitgraph/react";
 import { GitgraphCore } from "@gitgraph/core";
 
 import { gitGraphOptions } from "./helpers";
 
 
-storiesOf("gitflow/3. GitHub flow", module)
-  .add("Initial Repos", () => (
+const meta: Meta = {
+  title: "gitflow/3. GitHub flow",
+};
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const InitialRepos: Story = {
+  name: "Initial Repos",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
         .commit("Empty earth");
       }}
     </Gitgraph>
-  ))
-  .add("Deploy to dev (Do nothings all comits on master is deployable)", () => (
+  ),
+};
+
+export const DeployToDevDoNothingsAllComitsOnMasterIsDeployable: Story = {
+  name: "Deploy to dev (Do nothings all comits on master is deployable)",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
         .commit("Empty earth");
       }}
     </Gitgraph>
-  ))
-  .add("Create an ocean", () => (
+  ),
+};
+
+export const CreateAnOcean: Story = {
+  name: "Create an ocean",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -32,8 +49,12 @@ storiesOf("gitflow/3. GitHub flow", module)
         .commit("Add first ocean");
       }}
     </Gitgraph>
-  ))
-  .add("Create an humain", () => (
+  ),
+};
+
+export const CreateAnHumain: Story = {
+  name: "Create an humain",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -44,8 +65,12 @@ storiesOf("gitflow/3. GitHub flow", module)
         .commit("Add first humain");
       }}
     </Gitgraph>
-  ))
-  .add("Pull Request an humain", () => (
+  ),
+};
+
+export const PullRequestAnHumain: Story = {
+  name: "Pull Request an humain",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
        const master = gitgraph.branch("master")
@@ -56,8 +81,12 @@ storiesOf("gitflow/3. GitHub flow", module)
        .commit("PR 02 : Add first humain");
      }}
     </Gitgraph>
-  ))
-  .add("Deploy a beta (All is done)", () => (
+  ),
+};
+
+export const DeployABetaAllIsDone: Story = {
+  name: "Deploy a beta (All is done)",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
      {(gitgraph) => {
        const master = gitgraph.branch("master")
@@ -68,8 +97,12 @@ storiesOf("gitflow/3. GitHub flow", module)
        .commit("PR 02 : Add first humain");
      }}
     </Gitgraph>
-  ))
-  .add("Deploy a production (All is done)", () => (
+  ),
+};
+
+export const DeployAProductionAllIsDone: Story = {
+  name: "Deploy a production (All is done)",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
      {(gitgraph) => {
        const master = gitgraph.branch("master")
@@ -80,8 +113,12 @@ storiesOf("gitflow/3. GitHub flow", module)
        .commit("PR 02 : Add first humain");
      }}
     </Gitgraph>
-  ))
-  .add("Fix color of ocean", () => (
+  ),
+};
+
+export const FixColorOfOcean: Story = {
+  name: "Fix color of ocean",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
        const master = gitgraph.branch("master")
@@ -93,8 +130,12 @@ storiesOf("gitflow/3. GitHub flow", module)
        f.commit('Fix color of ocean');
      }}
     </Gitgraph>
-  )) 
-  .add("Pull request ocean", () => (
+  ),
+};
+
+export const PullRequestOcean: Story = {
+  name: "Pull request ocean",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
      {(gitgraph) => {
        const master = gitgraph.branch("master")
@@ -104,8 +145,12 @@ storiesOf("gitflow/3. GitHub flow", module)
        master.commit('PR 01 : Add first ocean');
      }}
     </Gitgraph>
-  )) 
-  .add("Oups humain have no brain", () => (
+  ),
+};
+
+export const OupsHumainHaveNoBrain: Story = {
+  name: "Oups humain have no brain",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
     {(gitgraph) => {
       const master = gitgraph.branch("master")
@@ -118,8 +163,12 @@ storiesOf("gitflow/3. GitHub flow", module)
 
     }}
    </Gitgraph>
-  ))
-  .add("Pull request brain", () => (
+  ),
+};
+
+export const PullRequestBrain: Story = {
+  name: "Pull request brain",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
     {(gitgraph) => {
       const master = gitgraph.branch("master")
@@ -131,8 +180,12 @@ storiesOf("gitflow/3. GitHub flow", module)
       .commit('PR 03 : Add a brain');
     }}
    </Gitgraph>
-  ))
-  .add("Fix brain on prod (All is done all comits on master is deployable)", () => (
+  ),
+};
+
+export const FixBrainOnProdAllIsDoneAllComitsOnMasterIsDeployable: Story = {
+  name: "Fix brain on prod (All is done all comits on master is deployable)",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
     {(gitgraph) => {
       const master = gitgraph.branch("master")
@@ -144,8 +197,12 @@ storiesOf("gitflow/3. GitHub flow", module)
       .commit('PR 03 : Add a brain');
     }}
    </Gitgraph>
-  ))
-  .add("Ocean is already deployed", () => (
+  ),
+};
+
+export const OceanIsAlreadyDeployed: Story = {
+  name: "Ocean is already deployed",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
     {(gitgraph) => {
       const master = gitgraph.branch("master")
@@ -157,8 +214,12 @@ storiesOf("gitflow/3. GitHub flow", module)
       .commit('PR 03 : Add a brain');
     }}
    </Gitgraph>
-  ))
-  .add("Conclusion", () => (
+  ),
+};
+
+export const Conclusion: Story = {
+  name: "Conclusion",
+  render: () => (
     <div>
       <ul>
         <li>La branche "master" est la vérité</li>
@@ -172,4 +233,5 @@ storiesOf("gitflow/3. GitHub flow", module)
         <li><a href="https://guides.github.com/">GitHub Guides</a></li>
       </ul>
     </div>
-  ))
+  ),
+};

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { storiesOf } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Gitgraph, Mode, Branch } from "@gitgraph/react";
 import { GitgraphCore } from "@gitgraph/core";
 
@@ -7,16 +7,29 @@ import { gitGraphOptions } from "./helpers";
 
 
 
-storiesOf("gitflow/4. Microsoft git flow", module)
-  .add("Initial Repos", () => (
+const meta: Meta = {
+  title: "gitflow/4. Microsoft git flow",
+};
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const InitialRepos: Story = {
+  name: "Initial Repos",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
         .commit("Empty earth");
       }}
     </Gitgraph>
-  ))
-  .add("Create a release", () => (
+  ),
+};
+
+export const CreateARelease: Story = {
+  name: "Create a release",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -25,8 +38,12 @@ storiesOf("gitflow/4. Microsoft git flow", module)
         .commit('Release M001');
       }}
     </Gitgraph>
-  ))
-  .add("Create ocean", () => (
+  ),
+};
+
+export const CreateOcean: Story = {
+  name: "Create ocean",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -37,8 +54,12 @@ storiesOf("gitflow/4. Microsoft git flow", module)
         topic.commit("Add my first ocean");
       }}
     </Gitgraph>
-  ))
-  .add("Create an humain", () => (
+  ),
+};
+
+export const CreateAnHumain: Story = {
+  name: "Create an humain",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -51,8 +72,12 @@ storiesOf("gitflow/4. Microsoft git flow", module)
         feature.commit("Add an humain");
       }}
     </Gitgraph>
-  ))
-  .add("Squash merge humain", () => (
+  ),
+};
+
+export const SquashMergeHumain: Story = {
+  name: "Squash merge humain",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -64,8 +89,12 @@ storiesOf("gitflow/4. Microsoft git flow", module)
         master.commit("PR 01 : Add an humain");
       }}
     </Gitgraph>
-  ))
-  .add("Create a release for humain", () => (
+  ),
+};
+
+export const CreateAReleaseForHumain: Story = {
+  name: "Create a release for humain",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
     {(gitgraph) => {
       const master = gitgraph.branch("master")
@@ -79,8 +108,12 @@ storiesOf("gitflow/4. Microsoft git flow", module)
       .commit('Release M002');
     }}
   </Gitgraph>
-  ))
-  .add("Fix color of ocean to blue", () => (
+  ),
+};
+
+export const FixColorOfOceanToBlue: Story = {
+  name: "Fix color of ocean to blue",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
     {(gitgraph) => {
       const master = gitgraph.branch("master")
@@ -95,8 +128,12 @@ storiesOf("gitflow/4. Microsoft git flow", module)
       topic.commit('Fix color of ocean');
     }}
   </Gitgraph>
-  ))
-  .add("Squash merge ocean", () => (
+  ),
+};
+
+export const SquashMergeOcean: Story = {
+  name: "Squash merge ocean",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
     {(gitgraph) => {
       const master = gitgraph.branch("master")
@@ -109,8 +146,12 @@ storiesOf("gitflow/4. Microsoft git flow", module)
       master.commit('PR 02 : Add ocean')
     }}
   </Gitgraph>
-  ))
-  .add("Oups Humain have no brain.", () => (
+  ),
+};
+
+export const OupsHumainHaveNoBrain: Story = {
+  name: "Oups Humain have no brain.",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
     {(gitgraph) => {
       const master = gitgraph.branch("master")
@@ -125,8 +166,12 @@ storiesOf("gitflow/4. Microsoft git flow", module)
       .commit('Fix brain ');
     }}
   </Gitgraph>
-  ))
-  .add("Squash fix of the brain", () => (
+  ),
+};
+
+export const SquashFixOfTheBrain: Story = {
+  name: "Squash fix of the brain",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
     {(gitgraph) => {
       const master = gitgraph.branch("master")
@@ -141,8 +186,12 @@ storiesOf("gitflow/4. Microsoft git flow", module)
       .commit('PR 03 : Fix brain');
     }}
   </Gitgraph>
-  ))
-  .add("PR a Cherry pick Hot fix on prod.", () => (
+  ),
+};
+
+export const PRACherryPickHotFixOnProd: Story = {
+  name: "PR a Cherry pick Hot fix on prod.",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
     {(gitgraph) => {
       const master = gitgraph.branch("master")
@@ -159,8 +208,12 @@ storiesOf("gitflow/4. Microsoft git flow", module)
       m002.branch('bugfix/fix-brain-to-M002').commit('Fix brain');
     }}
   </Gitgraph>
-  ))
-  .add("Squash the Hot fix on releases", () => (
+  ),
+};
+
+export const SquashTheHotFixOnReleases: Story = {
+  name: "Squash the Hot fix on releases",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
     {(gitgraph) => {
       const master = gitgraph.branch("master")
@@ -177,8 +230,12 @@ storiesOf("gitflow/4. Microsoft git flow", module)
       m002.commit('PR 05 : Fix brain');
     }}
   </Gitgraph>
-  ))  
-  .add("Deploy Ocean", () => (
+  ),
+};
+
+export const DeployOcean: Story = {
+  name: "Deploy Ocean",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
     {(gitgraph) => {
       const master = gitgraph.branch("master")
@@ -197,8 +254,12 @@ storiesOf("gitflow/4. Microsoft git flow", module)
       .commit('Release M003');
     }}
   </Gitgraph>
-  ))
-  .add("Conclusion", () => (
+  ),
+};
+
+export const Conclusion: Story = {
+  name: "Conclusion",
+  render: () => (
     <div>
       <ul>
         <li>La branche "master" est la vérité</li>
@@ -212,4 +273,5 @@ storiesOf("gitflow/4. Microsoft git flow", module)
         <li><a href="https://docs.microsoft.com/en-us/azure/devops/learn/devops-at-microsoft/release-flow">Release Flow</a></li>
       </ul>
     </div>
-  ))
+  ),
+};
