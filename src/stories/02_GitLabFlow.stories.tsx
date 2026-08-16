@@ -1,5 +1,5 @@
 import * as React from "react";
-import { storiesOf } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Gitgraph, Mode, Branch } from "@gitgraph/react";
 import { GitgraphCore } from "@gitgraph/core";
 
@@ -7,24 +7,41 @@ import { gitGraphOptions } from "./helpers";
 
 
 
-storiesOf("gitflow/2. git lab flow", module)
-  .add("Initial Repos", () => (
+const meta: Meta = {
+  title: "gitflow/2. git lab flow",
+};
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const InitialRepos: Story = {
+  name: "Initial Repos",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
         .commit("Empty earth");
       }}
     </Gitgraph>
-  ))
-  .add("Deploy to dev (Do nothings)", () => (
+  ),
+};
+
+export const DeployToDevDoNothings: Story = {
+  name: "Deploy to dev (Do nothings)",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
         .commit("Empty earth");
       }}
     </Gitgraph>
-  ))
-  .add("Create an ocean", () => (
+  ),
+};
+
+export const CreateAnOcean: Story = {
+  name: "Create an ocean",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -33,8 +50,12 @@ storiesOf("gitflow/2. git lab flow", module)
         .commit("Add first ocean");
       }}
     </Gitgraph>
-  ))
-  .add("Create an humain", () => (
+  ),
+};
+
+export const CreateAnHumain: Story = {
+  name: "Create an humain",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -45,8 +66,12 @@ storiesOf("gitflow/2. git lab flow", module)
         .commit("Add first humain");
       }}
     </Gitgraph>
-  ))
-  .add("Merge Request an humain", () => (
+  ),
+};
+
+export const MergeRequestAnHumain: Story = {
+  name: "Merge Request an humain",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -57,8 +82,12 @@ storiesOf("gitflow/2. git lab flow", module)
         .commit("MR 01 : Add first humain");
       }}
     </Gitgraph>
-  ))
-  .add("Deploy a stable", () => (
+  ),
+};
+
+export const DeployAStable: Story = {
+  name: "Deploy a stable",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -71,8 +100,12 @@ storiesOf("gitflow/2. git lab flow", module)
         .commit('Merge to Stable');
       }}
     </Gitgraph>
-  ))
-  .add("Deploy a production", () => (
+  ),
+};
+
+export const DeployAProduction: Story = {
+  name: "Deploy a production",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -87,8 +120,12 @@ storiesOf("gitflow/2. git lab flow", module)
         .commit('Merge to Production');
       }}
     </Gitgraph>
-  ))
-  .add("Fix color of ocean", () => (
+  ),
+};
+
+export const FixColorOfOcean: Story = {
+  name: "Fix color of ocean",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -104,8 +141,12 @@ storiesOf("gitflow/2. git lab flow", module)
         f.commit('Fix color of ocean');
       }}
     </Gitgraph>
-  )) 
-  .add("Merge request ocean", () => (
+  ),
+};
+
+export const MergeRequestOcean: Story = {
+  name: "Merge request ocean",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -120,8 +161,12 @@ storiesOf("gitflow/2. git lab flow", module)
         master.commit('MR 02 : Add ocean');
       }}
     </Gitgraph>
-  )) 
-  .add("Oups humain have no brain", () => (
+  ),
+};
+
+export const OupsHumainHaveNoBrain: Story = {
+  name: "Oups humain have no brain",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -139,8 +184,12 @@ storiesOf("gitflow/2. git lab flow", module)
               .commit('Add a brain');
       }}
     </Gitgraph>
-  ))
-  .add("Merge request brain", () => (
+  ),
+};
+
+export const MergeRequestBrain: Story = {
+  name: "Merge request brain",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -157,8 +206,12 @@ storiesOf("gitflow/2. git lab flow", module)
         master.commit('MR 03 : Add a brain');
       }}
     </Gitgraph>
-  ))
-  .add("Cherry pick brain on prod", () => (
+  ),
+};
+
+export const CherryPickBrainOnProd: Story = {
+  name: "Cherry pick brain on prod",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -178,8 +231,12 @@ storiesOf("gitflow/2. git lab flow", module)
         .commit('Add a brain');
       }}
     </Gitgraph>
-  ))
-  .add("Complete Merge Request on prod", () => (
+  ),
+};
+
+export const CompleteMergeRequestOnProd: Story = {
+  name: "Complete Merge Request on prod",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -199,8 +256,12 @@ storiesOf("gitflow/2. git lab flow", module)
         .commit('MR 04 : Add a brain');
       }}
     </Gitgraph>
-  ))
-  .add("Deploy ocean on stable", () => (
+  ),
+};
+
+export const DeployOceanOnStable: Story = {
+  name: "Deploy ocean on stable",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -221,8 +282,12 @@ storiesOf("gitflow/2. git lab flow", module)
         stable.merge(master);
       }}
     </Gitgraph>
-  ))
-  .add("Deploy ocean on production", () => (
+  ),
+};
+
+export const DeployOceanOnProduction: Story = {
+  name: "Deploy ocean on production",
+  render: () => (
     <Gitgraph options={gitGraphOptions}>
       {(gitgraph) => {
         const master = gitgraph.branch("master")
@@ -244,8 +309,12 @@ storiesOf("gitflow/2. git lab flow", module)
         production.merge(stable);
       }}
     </Gitgraph>
-  ))
-  .add("Conclusion", () => (
+  ),
+};
+
+export const Conclusion: Story = {
+  name: "Conclusion",
+  render: () => (
     <div>
       <ul>
         <li>La branche "master" est la vérité</li>
@@ -257,4 +326,5 @@ storiesOf("gitflow/2. git lab flow", module)
         <li><a href="https://about.gitlab.com/blog/2020/03/05/what-is-gitlab-flow/">The problem with Git flow</a></li>
       </ul>
     </div>
-  ))
+  ),
+};
